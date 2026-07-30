@@ -6,16 +6,16 @@ export class CompanyAccount extends DioAccount {
     }
 
     getLoan = (value: number): void => {
-        if (!this.validateSCompanytatus()) {
+        if (!this.validateCompanyStatus()) {
             return
         }
 
-        this.balance += value
+        this.setBalance(this.getBalance() + value)
 
         console.log(`Empréstimo realizado com sucesso. Seu saldo é ${this.getBalance()}`)
     }
 
-    private validateSCompanytatus = (): boolean => {
+    private validateCompanyStatus = (): boolean => {
         if (!this.getStatus()) {
             console.log('Operação negada: Conta inválida.');
             return false;

@@ -1,7 +1,7 @@
 export abstract class DioAccount {
     private name: string
     private readonly accountNumber: number
-    balance: number = 0
+    private balance: number = 0
     private status: boolean = true
 
     constructor(name: string, accountNumber: number) {
@@ -45,6 +45,12 @@ export abstract class DioAccount {
 
     getBalance = (): number => {
         return this.balance
+    }
+
+    setBalance = (balance: number): number => {
+        this.balance = balance
+
+        return balance
     }
 
     getStatus = (): boolean => {

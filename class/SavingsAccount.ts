@@ -8,7 +8,7 @@ export class SavingsAccount extends DioAccount {
     deposit = (value: number): void => {
         const finalValue = value + 10
 
-        this.balance += finalValue
+        this.setBalance(this.getBalance() + finalValue)
 
         console.log(`Depósito na poupança realizado de ${value} + 10 de bônus. Saldo atual: ${this.getBalance()}`)
     }
